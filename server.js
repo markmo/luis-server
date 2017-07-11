@@ -496,7 +496,8 @@ app.post('/publish/:appId', function (req, res) {
  *       500:
  *         description: Error publishing workspace to LUIS
  */
-app.post('/assignedkey', function (req, res) {
+app.post('/assignedkey/:appId', function (req, res) {
+  const appid = req.params.appId
   const url = baseURL + `/${appid}/versions/${versionId}/assignedkey`
   fetch(url, {
     method: 'POST',
